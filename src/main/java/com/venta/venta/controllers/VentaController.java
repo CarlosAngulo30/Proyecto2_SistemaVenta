@@ -36,7 +36,7 @@ public class VentaController {
     }
 
 
-    @GetMapping("/ventasPorFolio")
+    @GetMapping("/{folio}")
     public ResponseEntity<List<Venta>> obtenerVentaPorFolio(@RequestParam(value = "folio", required = false) String folio) {
         List<Venta> ventas;
         if (folio == null) {
@@ -52,7 +52,7 @@ public class VentaController {
         return ResponseEntity.ok(ventas);
     }
 
-    /*@GetMapping("/query")
+    /*@GetMapping("/{idCliente}")
     public ResponseEntity<List<Venta>> obtenerVentaPorCliente(@RequestParam(value = "id_cliente", required = false) Long idCliente) {
         List<Venta> ventas;
         if (idCliente == null) {
@@ -69,7 +69,7 @@ public class VentaController {
     }*/
 
 
-    @GetMapping("/ventasPorFecha")
+    @GetMapping("/{fecha}")
     public ResponseEntity<List<Venta>> obtenerVentaPorFecha(@RequestParam(value = "fecha", required = false) Calendar fecha) {
         List<Venta> ventas;
         if (fecha == null) {
